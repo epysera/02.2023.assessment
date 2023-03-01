@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Employee list</title>
+</head>
+<body>
+<div align="center">
+  <h1>Employee List</h1>
+  <a href="/new">Create New Employee</a>
+  <br>
+  <a th:href="@{/export}">Export to CSV</a>
+  <br/><br/>
+  <table border="1" cellpadding="10">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Data zatrudnienia</th>
+      <th>Wynagrodzenie</th>
+<!--      <th>Miasto</th>-->
+<!--      <th>Kod pocztowy</th>-->
+<!--      <th>Ulica</th>-->
+<!--      <th>Nr domu</th>-->
+
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${listEmployees}">
+      <td th:text="${employee.id}">Employee ID</td>
+      <td th:text="${employee.name}">Name</td>
+      <td th:text="${employee.surname}">Surname</td>
+      <td th:text="${employee.email}">Email</td>
+      <td th:text="${employee.phone}">Phone</td>
+      <td th:text="${employee.employment_date}">Data zatrudnienia</td>
+      <td th:text="${employee.salary}">Salary</td>
+<!--      <td th:text="${employee.address.city}">City</td>-->
+<!--      <td th:text="${employee.address.zip_code}">Zip Code</td>-->
+<!--      <td th:text="${employee.address.street}">Street</td>-->
+<!--      <td th:text="${employee.address.house_number}">House Number</td>-->
+
+      <td>
+        <a th:href="@{'/edit/' + ${employee.id}}">Edit</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{'/delete/' + ${employee.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

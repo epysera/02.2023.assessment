@@ -10,19 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class Employees2Application implements CommandLineRunner {
-	@Autowired
-	private EmployeesRepository employeesRepository;
+public class Employees2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Employees2Application.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception{
-		List<Employee> listEmployees = employeesRepository.findAll();
-
-		listEmployees.forEach(System.out :: println);
+//	@Override
+//	public void run(String... args) throws Exception{
+//		List<Employee> listEmployees = employeesRepository.findAll();
+//
+//		listEmployees.forEach(System.out :: println);
 	}
 
-}

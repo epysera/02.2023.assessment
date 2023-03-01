@@ -29,6 +29,8 @@ public class Employee {
     @OneToOne (cascade = CascadeType.ALL)
     private Department department;
 
+    public Employee() {
+    }
 
     public Long getId() {
         return id;

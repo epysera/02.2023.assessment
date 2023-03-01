@@ -11,7 +11,7 @@ public class Department {
     private Long id;
     @Size(max=30)
     private String name;
-
+//    @Column(name = "location")
     @OneToOne (cascade = CascadeType.ALL)
     private Address address;
 

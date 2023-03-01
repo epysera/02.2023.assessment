@@ -19,6 +19,9 @@ public class Address {
     @Size(max=30)
     private String city;
 
+    public Address() {
+    }
+
     public Long getId() {
         return id;
     }
